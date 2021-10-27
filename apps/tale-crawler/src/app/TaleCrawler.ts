@@ -1,16 +1,15 @@
 import * as winston from "winston";
 
-import { CommonCrawler, ICrowler } from "./crawlers/Common.crawler";
+import { ConfigurationService, DatabaseService, Logger } from "@tales/shared";
+import { MusicAlbum, MusicAlbumModel, MusicRecording, MusicRecordingModel } from "@tales/shared";
 
-import { MusicAlbum, MusicAlbumModel, MusicRecording, MusicRecordingModel } from "./models/Music.model";
+import { CommonCrawler, ICrowler } from "./crawlers/Common.crawler";
 
 import { MusicAlbumParser } from "./parsers/MusicAlbum.parser";
 import { MusicAlbumsParser } from "./parsers/MusicAlbums.parser";
 
-import { ConfigurationService } from "./services/configuration.service";
-import { DatabaseService } from "./services/database.service";
 import { LoaderService } from "./services/Loader.service";
-import { Logger } from "./services/logger.service";
+
 
 export class TaleCrawler {
   constructor(

@@ -1,4 +1,4 @@
-import { ConfigurationService } from "./app/services/configuration.service";
+import { ConfigurationService } from "@tales/shared";
 import { TaleCrawler } from "./app/TaleCrawler";
 
 function main() {

@@ -1,7 +1,10 @@
 import * as winston from "winston";
+
+import { Logger } from "@tales/shared";
+
 import { HttpClientInjector } from "../injectors/HttpClient.injector";
 import { IContentParser } from "../parsers";
-import { Logger } from "../services/logger.service";
+
 
 export interface ICrowler<T> {
   crawl(): Promise<T[]>;

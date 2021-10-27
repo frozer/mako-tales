@@ -1,9 +1,10 @@
 import { CheerioAPI } from "cheerio";
 
+import { MusicAlbum } from "@tales/shared";
+
 import { IContentParser } from ".";
 import { ParsedData } from "../crawlers/Common.crawler";
 import { HtmlParserInjector } from "../injectors/HTMLParser.injector";
-import { MusicAlbum } from "../models/Music.model";
 
 export class MusicAlbumsParser implements IContentParser<MusicAlbum[]> {
   constructor(

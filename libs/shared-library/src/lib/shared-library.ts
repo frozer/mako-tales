@@ -1,3 +1,2 @@
-export function sharedLibrary(): string {
-  return 'shared-library';
-}
+export * from './models';
+export * from './services';

@@ -1,10 +1,11 @@
 import * as winston from "winston";
 import { CheerioAPI } from "cheerio";
+
+import { Logger, MusicRecording } from "@tales/shared";
+
 import { IContentParser } from ".";
 import { ParsedData } from "../crawlers/Common.crawler";
 import { HtmlParserInjector } from "../injectors/HTMLParser.injector";
-import { MusicRecording } from "../models/Music.model";
-import { Logger } from "../services/logger.service";
 
 const IMAGE_CONTAINTER_CLASS = '.podcasts__item-pic';
 const NAME_CONTAINTER_CLASS = '.podcasts__item-name';
