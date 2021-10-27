@@ -1,0 +1,52 @@
+{
+  "root": "apps/tale-crawler",
+  "sourceRoot": "apps/tale-crawler/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/tale-crawler",
+        "main": "apps/tale-crawler/src/main.ts",
+        "tsConfig": "apps/tale-crawler/tsconfig.app.json",
+        "assets": ["apps/tale-crawler/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/tale-crawler/src/environments/environment.ts",
+              "with": "apps/tale-crawler/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "tale-crawler:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/tale-crawler/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/tale-crawler"],
+      "options": {
+        "jestConfig": "apps/tale-crawler/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

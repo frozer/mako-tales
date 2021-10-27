@@ -1,5 +1,5 @@
-import { ConfigurationService } from "./services/configuration.service";
-import { TaleCrawler } from "./TaleCrawler";
+import { ConfigurationService } from "./app/services/configuration.service";
+import { TaleCrawler } from "./app/TaleCrawler";
 
 function main() {
   const crawler = new TaleCrawler(new ConfigurationService());
