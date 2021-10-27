@@ -1,3 +1,5 @@
+import { CheerioAPI } from "cheerio";
+
 import { IContentParser } from ".";
 import { ParsedData } from "../crawlers/Common.crawler";
 import { HtmlParserInjector } from "../injectors/HTMLParser.injector";
@@ -51,7 +53,7 @@ export class MusicAlbumsParser implements IContentParser<MusicAlbum[]> {
     return url.replace(/\D/g, '').trim();
   }
 
-  private getNextPageUrl($: cheerio.Root) {
+  private getNextPageUrl($: CheerioAPI) {
      // pagination analysis
     const pages = [];
     $('.default_page').children().each((...args) => {

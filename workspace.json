@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "shared-library": "libs/shared-library",
     "tale-crawler": "apps/tale-crawler"
   }
 }

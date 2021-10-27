@@ -1,4 +1,5 @@
 import * as winston from "winston";
+import { CheerioAPI } from "cheerio";
 import { IContentParser } from ".";
 import { ParsedData } from "../crawlers/Common.crawler";
 import { HtmlParserInjector } from "../injectors/HTMLParser.injector";
@@ -61,11 +62,11 @@ export class MusicAlbumParser implements IContentParser<MusicRecording[]> {
     return res;
   }
 
-  private getId(el: cheerio.Cheerio): string {
+  private getId(el): string {
     return el.attr('id').replace(/\D/g, '').trim();
   }
 
-  private getImage(el: cheerio.Cheerio): string {
+  private getImage(el): string {
     const imgSrc = el.find(IMAGE_CONTAINTER_CLASS).attr('src');
     try {
       const imgUrl = new URL(imgSrc);
@@ -79,15 +80,15 @@ export class MusicAlbumParser implements IContentParser<MusicRecording[]> {
     return '';
   }
 
-  private getName(el: cheerio.Cheerio): string {
+  private getName(el): string {
     return el.find(NAME_CONTAINTER_CLASS).text().trim();
   }
 
-  private getDuration(el: cheerio.Cheerio): string {
+  private getDuration(el): string {
     return el.find(DURATION_CONTAINTER_CLASS).text().trim();
   }
 
-  private getNextPageUrl($: cheerio.Root) {
+  private getNextPageUrl($: CheerioAPI) {
     this.currentPage++;
     
     if ($('style').contents().text() !== NO_MORE_PAGES_MARKER) {

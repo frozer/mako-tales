@@ -6,10 +6,7 @@ export class DatabaseService {
 
   async connect(dbConnConfig: string) {
     try {
-      await connect(dbConnConfig, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true 
-      });
+      await connect(dbConnConfig);
       
       this.logger.debug('Connection established ' + dbConnConfig);
 
