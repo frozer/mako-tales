@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "shared-library": "libs/shared-library",
-    "tale-crawler": "apps/tale-crawler"
+    "tale-crawler": "apps/tale-crawler",
+    "tales-api": "apps/tales-api"
   }
 }

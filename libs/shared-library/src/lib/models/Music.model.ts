@@ -35,7 +35,7 @@ const MusicAlbumSchema = new Schema<MusicAlbum>({
   url: { type: String, required: true },  
   name: { type: String, required: true },
   isDirty: Boolean,
-  updated: { type: Number, requried: true }
+  updated: { type: Number, required: true }
 });
 
 const MusicRecordingSchema = new Schema<MusicRecording>({
@@ -46,7 +46,7 @@ const MusicRecordingSchema = new Schema<MusicRecording>({
   serviceUrl: { type: String, required: true },  
   duration: String,
   isDirty: Boolean,
-  updated: { type: Number, requried: true }
+  updated: { type: Number, required: true }
 });
 
 export const MusicAlbumModel = model<MusicAlbum>('music_album', MusicAlbumSchema);

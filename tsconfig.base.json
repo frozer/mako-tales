@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mako-tales/shared-library": ["libs/shared-library/src/index.ts"]
+      "@tales/shared": ["libs/shared-library/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
