@@ -1,0 +1,5 @@
+{
+  "dbConn": "mongodb://localhost:27017/tales",
+  "rootUrl": "https://www.deti.fm/fairy_tales",
+  "logLevel": "debug"
+}
